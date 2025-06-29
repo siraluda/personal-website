@@ -1,5 +1,5 @@
 terraform {
-    required_version = "~> 1.6.6"
+  required_version = "~> 1.6.6"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,10 +8,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "siraluda-cfn-packages"
-    key          = "terraform-backends/terraform-personal-brand.tfstate"
-    region       = "ca-central-1"
-    use_lockfile = true
+    bucket = "siraluda-cfn-packages"
+    key    = "terraform-backends/terraform-personal-brand.tfstate"
+    region = "ca-central-1"
   }
 }
 

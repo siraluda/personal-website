@@ -19,8 +19,8 @@ resource "aws_cloudfront_distribution" "cdn" {
   default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods        = ["GET", "POST", "HEAD"]
-    cached_methods         = ["GET", "HEAD"]
+    allowed_methods        = ["HEAD", "GET"]
+    cached_methods         = ["HEAD", "GET"]
     target_origin_id       = "s3-${local.bucket_name}"
     viewer_protocol_policy = "redirect-to-https"
 
@@ -50,4 +50,8 @@ resource "aws_cloudfront_distribution" "cdn" {
 
 output "cloudfront_url" {
   value = aws_cloudfront_distribution.cdn.domain_name
+}
+
+output "cloudfront_cdn_id" {
+  value = aws_cloudfront_distribution.cdn.id
 }

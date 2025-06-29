@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+Infrastracture/.terraform/
+Infrastracture/*.tfstate
+Infrastracture/*.tfstate.*
+Infrastracture/crash.log
+Infrastracture/terraform.tfvars
+Infrastracture/override.tf
+Infrastracture/override.tf.json

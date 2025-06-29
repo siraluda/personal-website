@@ -5,7 +5,7 @@ resource "random_string" "suffix" {
 }
 
 locals {
-  bucket_name = "${var.app_name}-${random_string.suffix}"
+  bucket_name = "${var.app_name}-${random_string.suffix.result}"
 }
 
 resource "aws_s3_bucket" "static-website" {
@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "s3_policy" {
 
 resource "aws_s3_bucket_policy" "static-website-policy" {
   bucket = aws_s3_bucket.static-website.id
-  policy = data.aws_iam_policy_document.s3_policy
+  policy = data.aws_iam_policy_document.s3_policy.json
 }
 
 output "website-bucket-name" {

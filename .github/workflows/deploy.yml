@@ -1,0 +1,53 @@
+name: Deploy to S3 and Cloudfront
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build and deploy website
+    runs-on: ubuntu-latest
+
+    env:
+      BUCKET_NAME: personal-brand-q9uhdwy
+      CDN_DISTRIBUTION_ID: E11K3HW209YI5A
+      REGION: ca-central-1
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website application
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.REGION }}
+
+      - name: Sync static website files to S3
+        run: |
+          aws s3 sync dist/ s3://$BUCKET_NAME --delete \
+          --cache-control "max-age=31536000" \
+          --exclude "index.html"
+
+          aws s3 cp dist/index.html s3://$BUCKET_NAME/index.html \
+          --cache-control "no-cache, no-store, must-revalidate"
+
+      - name: Invalidate Cloudfront cache
+        run: |
+          aws cloudfront create-invalidation \
+          --distribution-id $CDN_DISTRIBUTION_ID \
+          --paths "/*"
