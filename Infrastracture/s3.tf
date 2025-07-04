@@ -45,11 +45,14 @@ data "aws_iam_policy_document" "s3_policy" {
 
     condition {
       test     = "StringEquals"
-      variable = "AWS:SourceArn"
-      values   = [aws_cloudfront_distribution.cdn.arn]
+      variable = "AWS:SourceAccount"
+      values   = [data.aws_caller_identity.current.account_id]
     }
   }
 }
+
+data "aws_caller_identity" "current" {}
+
 
 resource "aws_s3_bucket_policy" "static-website-policy" {
   bucket = aws_s3_bucket.static-website.id
