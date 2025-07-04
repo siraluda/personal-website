@@ -35,6 +35,7 @@ resource "aws_s3_bucket_website_configuration" "website-config" {
 
 data "aws_iam_policy_document" "s3_policy" {
   statement {
+    effect = "Allow"
     actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.static-website.arn}/*"]
     principals {
