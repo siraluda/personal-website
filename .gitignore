@@ -30,3 +30,5 @@ Infrastracture/crash.log
 Infrastracture/terraform.tfvars
 Infrastracture/override.tf
 Infrastracture/override.tf.json
+
+Notes.md
