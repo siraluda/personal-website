@@ -1,3 +1,4 @@
+import About from "./components/about/About"
 import Hero from "./components/Hero"
 import Nav from "./components/Nav"
 
@@ -9,6 +10,7 @@ function App() {
       {/* Intro section */}
       <Hero/>
       {/* About section */}
+      <About/>
       {/* Experience section */}
       {/* Projects section */}
       {/* Contact section */}

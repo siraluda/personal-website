@@ -2,10 +2,11 @@ import React, { type PropsWithChildren } from 'react'
 
 interface SectionProps {
     id: string
+    classname: string
 }
-const Section: React.FC<PropsWithChildren<SectionProps>> = ({id, children}) => {
+const Section: React.FC<PropsWithChildren<SectionProps>> = ({id, children, classname}) => {
   return (
-    <section id={id} className='flex flex-col md:flex-row justify-center gap-10 md:gap-15 items-center mx-[10rem] pt-10'>
+    <section id={id} className={`${classname} gap-10 md:gap-15 sm:mx-[10rem] h-screen`}>
         {children}
     </section>
   )

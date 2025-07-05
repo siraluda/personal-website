@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <nav
       id="desktop-nav"
-      className="flex flex-row items-center justify-around h-[17vh] relative"
+      className="flex flex-row items-center justify-around p-10 h-7 relative"
     >
       <div className="font-extrabold text-lg">Abdul-Waris</div>
       <div className="max-md:hidden">
@@ -31,7 +31,7 @@ const Nav = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="md:hidden px-4 p-4 space-y-2 absolute right-15 top-24">
+        <div className="md:hidden px-4 p-4 space-y-2 bg-white absolute right-15 top-24 z-10">
           <a href="#" className="block text-gray-700 hover:text-blue-600">
             About Me
           </a>
