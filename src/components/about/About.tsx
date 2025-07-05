@@ -35,12 +35,7 @@ const About = () => {
             </Badge>
           </div>
           <p className="py-5 leading-9 tracking-wide">
-            I am an Engineer with over 5 years of experience designing, deploying, and automating resources using cloud infrastructure
-            services like Terraform, Ansible, Docker, and GitHub Actions. My software engineering experience
-            include building and deploying scalable full-stack applications using .NET Core, React, TypeScript, and C#.
-            I enjoy designing infrastructure and implementing software solutions with clean architecture and RESTful Web Services. I am eager to learn
-            and adept at collaborating with cross-functional teams to deliver innovative products from concept to deployment. More importantly, I am
-            passionate about reliability, scalability, and operational excellence.
+            I’m a DevOps and Software Engineer with over 5 years of hands-on experience architecting, automating, and managing cloud-native infrastructure using tools like Terraform, Ansible, Docker, and GitHub Actions. My background in full-stack development includes building and deploying robust, scalable applications with .NET Core, React, TypeScript, and C#. I specialize in designing clean, maintainable architectures and implementing reliable RESTful APIs that power modern web experiences. I thrive in collaborative environments, working closely with cross-functional teams to bring innovative ideas to life—from initial concept to production. Above all, I’m passionate about building systems that prioritize reliability, scalability, and operational excellence.
           </p>
         </div>
       </div>
