@@ -1,4 +1,5 @@
 import About from "./components/about/About"
+import Experience from "./components/experience/Experience"
 import Hero from "./components/Hero"
 import Nav from "./components/Nav"
 
@@ -12,6 +13,7 @@ function App() {
       {/* About section */}
       <About/>
       {/* Experience section */}
+      <Experience/>
       {/* Projects section */}
       {/* Contact section */}
       {/* Footer section */}
