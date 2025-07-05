@@ -6,16 +6,16 @@ const About = () => {
   return (
     <Section
       id="about-section"
-      classname="flex flex-col justify-center items-center-safe"
+      classname="flex flex-col justify-center items-center-safe px-5"
     >
-      <div className="flex flex-col justify-center items-center-safe p-5 mt-10">
+      <div className="flex flex-col justify-center items-center-safe mt-10">
         <p>know more</p>
-        <h2 className="text-[2rem]">About me</h2>
+        <h2 className="text-[2rem] font-extrabold tracking-wide">About me</h2>
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-5">
         <div
           id="image-container-2"
-          className="rounded-4xl overflow-hidden h-[400px] md:h-[600px] mx-5"
+          className="rounded-4xl overflow-hidden h-[400px] md:h-[600px] sm:mx-5"
         >
           <img
             src="/assets/abdul-smiling.jpg"
@@ -24,7 +24,7 @@ const About = () => {
           />
         </div>
         <div>
-          <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-col sm:flex-row gap-5 mb-7">
             <Badge icon={faAward} title="Experience">
               <p>5+ years</p>
               <p>Software and DevOps Engineering</p>
@@ -34,7 +34,7 @@ const About = () => {
               <p>M.Eng Engineering <span className="font-light italic">- Process</span></p>
             </Badge>
           </div>
-          <p className="p-5">
+          <p className="py-5">
             I am an Engineer with over 5 years of experience designing, deploying, and automating resources using cloud infrastructure
             services like Terraform, Ansible, Docker, and GitHub Actions. My software engineering experience
             include building and deploying scalable full-stack applications using .NET Core, React, TypeScript, and C#.
