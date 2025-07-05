@@ -6,9 +6,9 @@ const About = () => {
   return (
     <Section
       id="about-section"
-      classname="flex flex-col justify-center items-center-safe px-5"
+      classname="flex flex-col justify-center items-center px-5"
     >
-      <div className="flex flex-col justify-center items-center-safe mt-10">
+      <div className="flex flex-col justify-center items-center mt-10">
         <p>know more</p>
         <h2 className="text-[2rem] font-extrabold tracking-wide">About me</h2>
       </div>
