@@ -34,7 +34,7 @@ const About = () => {
               <p>M.Eng Engineering <span className="font-light italic">- Process</span></p>
             </Badge>
           </div>
-          <p className="py-5">
+          <p className="py-5 leading-9 tracking-wide">
             I am an Engineer with over 5 years of experience designing, deploying, and automating resources using cloud infrastructure
             services like Terraform, Ansible, Docker, and GitHub Actions. My software engineering experience
             include building and deploying scalable full-stack applications using .NET Core, React, TypeScript, and C#.

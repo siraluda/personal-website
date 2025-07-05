@@ -9,7 +9,7 @@ const Nav = () => {
       id="desktop-nav"
       className="flex flex-row items-center justify-around p-10 h-7 relative"
     >
-      <div className="font-extrabold text-lg">Abdul-Waris</div>
+      <div className="font-extrabold text-xl tracking-wide">A.<span className="text-gray-500">WARIS</span></div>
       <div className="max-md:hidden">
         <ul className="flex flex-row gap-10">
           <li>About Me</li>

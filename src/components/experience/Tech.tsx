@@ -8,7 +8,7 @@ interface TechProps {
 const Tech: React.FC<PropsWithChildren<TechProps>> = ({name}) => {
   return (
     <div className="flex flex-row gap-2 justify-start items-center">
-        <FontAwesomeIcon icon={faCertificate}/>
+        <FontAwesomeIcon icon={faCertificate} opacity={0.8}/>
         <p className="font-bold text-sm sm:text-lg">{name}</p>
     </div>
   )

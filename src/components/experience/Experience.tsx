@@ -9,7 +9,7 @@ const Experience = () => {
         <p>Explore my</p>
         <h2 className='text-[2rem] font-extrabold tracking-wide'>Experience</h2>
         </div>
-        <div className='flex flex-col sm:flex-row gap-5 mb-7'>
+        <div className='flex flex-col sm:flex-row gap-5 mb-7 tracking-wide'>
             <Sector title='DevOps Engineering'>
                 {
                     [   "Terraform", "Ansible", "Docker", "Linux",

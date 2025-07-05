@@ -2,7 +2,7 @@ import Section from './Section'
 
 const Hero = () => {
   return (
-    <Section id='hero-section' classname='flex flex-col md:flex-row justify-center items-center'>
+    <Section id='hero-section' classname='flex flex-col md:flex-row justify-center items-center tracking-wide'>
       <div id='image-container' className='rounded-full overflow-hidden h-[300px] md:h-[400px] w-[300px] md:w-[400px]'>
         <img src="/assets/abdul-profile.jpg" className='overflow-clip' alt="profile-image" />
       </div>
