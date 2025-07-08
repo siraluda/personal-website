@@ -2,7 +2,7 @@
 
 This project implements a fully automated CI/CD pipeline for deploying a personal static website to Amazon Web Services (AWS). It was inspired by the need to frequently update and maintain a personal portfolio or blog site, without going through the hassle of manual deployments.
 
-By integrating GitHub Actions with Terraform, the deployment process becomes seamless—any time changes are pushed to the main branch, the latest version of the site is automatically deployed.
+By integrating GitHub Actions with Terraform, the deployment process becomes seamless any time changes are pushed to the main branch, the latest version of the site is automatically deployed.
 
 ## 🛠️ Tech Stack & Infrastructure
 
