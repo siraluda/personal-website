@@ -1,12 +1,12 @@
-# 🚀 Automated CI/CD Pipeline for Static Website Deployment on AWS
+# Automated CI/CD Pipeline for Static Website Deployment on AWS
 
 This project implements a fully automated CI/CD pipeline for deploying a personal static website to Amazon Web Services (AWS). It was inspired by the need to frequently update and maintain a personal portfolio or blog site, without going through the hassle of manual deployments.
 
 By integrating GitHub Actions with Terraform, the deployment process becomes seamless any time changes are pushed to the main branch, the latest version of the site is automatically deployed.
 
-## 🛠️ Tech Stack & Infrastructure
+## Tech Stack & Infrastructure
 
-### 🧱 Terraform
+### Terraform
 
 Used to define and provision the AWS infrastructure. The setup includes:
 
@@ -18,7 +18,7 @@ Used to define and provision the AWS infrastructure. The setup includes:
   - Acts as a Content Delivery Network (CDN) for low-latency, high-availability access to the website globally.
   - Distributes content stored in S3 with HTTPS support and caching.
 
-### ⚙️ GitHub Actions
+### GitHub Actions
 
 - Automates the CI/CD process by running workflows triggered on every push to the main branch:
 - Builds the static site (if needed)
