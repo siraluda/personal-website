@@ -1,69 +1,39 @@
-# React + TypeScript + Vite
+# 🚀 Automated CI/CD Pipeline for Static Website Deployment on AWS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a fully automated CI/CD pipeline for deploying a personal static website to Amazon Web Services (AWS). It was inspired by the need to frequently update and maintain a personal portfolio or blog site, without going through the hassle of manual deployments.
 
-Currently, two official plugins are available:
+By integrating GitHub Actions with Terraform, the deployment process becomes seamless—any time changes are pushed to the main branch, the latest version of the site is automatically deployed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack & Infrastructure
 
-## Expanding the ESLint configuration
+### 🧱 Terraform
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Used to define and provision the AWS infrastructure. The setup includes:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Amazon S3
+  - Configured to host the static website.
+  - Static website hosting enabled with public access (or CloudFront-only access, depending on configuration).
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- AWS CloudFront
+  - Acts as a Content Delivery Network (CDN) for low-latency, high-availability access to the website globally.
+  - Distributes content stored in S3 with HTTPS support and caching.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ⚙️ GitHub Actions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Automates the CI/CD process by running workflows triggered on every push to the main branch:
+- Builds the static site (if needed)
+- Uploads the updated files to the S3 bucket
+- Invalidates the CloudFront cache to reflect changes immediately
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🎯 Project Goal
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- The goal of this project is to simplify website updates using modern DevOps practices. With this setup:
+- Manual deployment is eliminated
+- Updates are consistent and reliable
+- Infrastructure is reproducible and version-controlled using Terraform
+
+### ✅ Key Benefits
+
+- Fast and secure global delivery with CloudFront
+- Zero-downtime deployment with automated cache invalidation
+- Infrastructure as Code with full automation
